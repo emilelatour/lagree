@@ -11,3 +11,5 @@ Description: Calculate various agreement coefficients for 2 or more raters along
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/emilelatour/lagree
+BugReports: https://github.com/emilelatour/lagree/issues
