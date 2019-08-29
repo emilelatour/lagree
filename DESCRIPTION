@@ -1,5 +1,5 @@
 Package: lagree
-Title: Calculate a various interrater agreement coefficients 
+Title: Calculate various interrater agreement coefficients 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Emile",
@@ -13,3 +13,22 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/emilelatour/lagree
 BugReports: https://github.com/emilelatour/lagree/issues
+ByteCompile: true
+Imports: 
+  broom, 
+  dplyr, 
+  glue, 
+  janitor, 
+  knitr, 
+  magrittr, 
+  purrr, 
+  rlang, 
+  scales, 
+  stringr, 
+  tibble, 
+  tidyr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Suggests: 
+    rmarkdown
+VignetteBuilder: knitr
