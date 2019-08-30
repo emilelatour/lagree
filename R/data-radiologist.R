@@ -1,0 +1,36 @@
+#' @title
+#' Classification by two radiologists of 85 xeromammograms as normal, benign disease, suspicion of cancer, or cancer
+#'
+#' @description
+#' Classification by two radiologists of 85 xeromammograms as normal, benign
+#' disease, suspicion of cancer, or cancer (a subset of the data from Boyd et
+#' al. (1982) and discussed in the context of kappa in Altman (1991, 403–405).
+#'
+#'
+#' @format A tibble with 85 observations (Normal, Benign, Suspect, Cancer) on 2 variables representing
+#'   different raters.
+#' \describe{
+#'   \item{radiologist_a}{ratings of Radiologist a (see levels above)}
+#'   \item{radiologist_b}{ratings of Radiologist b (see levels above)}
+#' }
+#'
+#' @references
+#' Altman, D. G. 1991. Practical Statistics for Medical Research. London: Chapman & Hall/CRC
+#'
+#' @source
+#' Boyd, N. F., C. Wolfson, M. Moskowitz, T. Carlile, M. Petitclerc, H. A.
+#' Ferri, E. Fishell, A. Gregoire, M. Kiernan, J. D. Longley, I. S. Simor, and
+#' A. B. Miller. 1982. Observer variation in the interpretation of
+#' xeromammograms. Journal of the National Cancer Institute 68: 357–363.
+#'
+#' [Datasets for Stata Base Reference Manual, Release 13](https://www.stata-press.com/data/r13/r.html#r)
+#'
+#' @examples
+#' radiologist
+#'
+#' library(dplyr)
+#' library(tidyr)
+#' radiologist %>%
+#'   with(., table(radiologist_a, radiologist_b)) %>%
+#'   addmargins()
+"radiologist"

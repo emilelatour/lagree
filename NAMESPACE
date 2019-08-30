@@ -3,6 +3,7 @@
 export("%>%")
 export(ac_weights)
 export(bipolar_weights)
+export(bp_2_table)
 export(calc_agree_mat)
 export(calc_classif_mat)
 export(circular_weights)

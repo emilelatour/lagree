@@ -35,21 +35,21 @@
 #             .funs = list(~ factor(.,
 #                                   levels = c(1, 2, 3))))
 #
-# table_215 <- tibble::tribble(
-#   ~unit, ~rater_1, ~rater_2, ~rater_3, ~rater_4,
-#   1,      "a",      "a",       NA,      "a",
-#   2,      "b",      "b",      "c",      "b",
-#   3,      "c",      "c",      "c",      "c",
-#   4,      "c",      "c",      "c",      "c",
-#   5,      "b",      "b",      "b",      "b",
-#   6,      "a",      "b",      "c",      "d",
-#   7,      "d",      "d",      "d",      "d",
-#   8,      "a",      "a",      "b",      "a",
-#   9,      "b",      "b",      "b",      "b",
-#   10,       NA,      "e",      "e",      "e",
-#   11,       NA,       NA,      "a",      "a",
-#   12,       NA,       NA,      "c",       NA
-# )
+# # table_215 <- tibble::tribble(
+# #   ~unit, ~rater_1, ~rater_2, ~rater_3, ~rater_4,
+# #   1,      "a",      "a",       NA,      "a",
+# #   2,      "b",      "b",      "c",      "b",
+# #   3,      "c",      "c",      "c",      "c",
+# #   4,      "c",      "c",      "c",      "c",
+# #   5,      "b",      "b",      "b",      "b",
+# #   6,      "a",      "b",      "c",      "d",
+# #   7,      "d",      "d",      "d",      "d",
+# #   8,      "a",      "a",      "b",      "a",
+# #   9,      "b",      "b",      "b",      "b",
+# #   10,       NA,      "e",      "e",      "e",
+# #   11,       NA,       NA,      "a",      "a",
+# #   12,       NA,       NA,      "c",       NA
+# # )
 #
 #
 # #### Arguments --------------------------------
@@ -271,9 +271,9 @@
 #
 #
 #
-#   ## Table for 2 rater case ----------------
-#
 #   if (purrr::pluck(summary_counts, "k_raters") == 2) {
+#
+#     ## Table for 2 rater case ----------------
 #
 #     ## Make a q x q ratings matirx ----------------
 #
@@ -332,11 +332,9 @@
 #     # Does not really apply in the 2x2 case. Stata just shows "ratings per
 #     # subject" which will always be two...
 #
-#
+#   } else if (purrr::pluck(summary_counts, "k_raters") >= 3) {
 #
 #     ## Calc table for 3 or more raters ----------------
-#
-#   } else if (purrr::pluck(summary_counts, "k_raters") >= 3) {
 #
 #
 #     ## Make a n x q ratings matirx ----------------
@@ -414,5 +412,5 @@
 #
 # #### 2 rater example --------------------------------
 #
-# calc_ac_table(data = table_215,
-#               dplyr::starts_with("rater"))
+# calc_ac_table(data = radiologist,
+#               dplyr::starts_with("radiologist"))

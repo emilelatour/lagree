@@ -1,6 +1,6 @@
 
-# #### Packages -------------------------------- 
-# 
+# #### Packages --------------------------------
+#
 pacman::p_load(
   tidyverse,     # packages ggplot2, dplyr, tidyr, readr, purrr, tibble,
   # stringr, and forcats
@@ -8,7 +8,7 @@ pacman::p_load(
 )
 
 
-#### radiologist data -------------------------------- 
+#### radiologist data --------------------------------
 
 # From Altman, statistics in medicine p. 403
 # https://books.google.com/books?id=v-walRnRxWQC&pg=PA403&lpg=PA403&dq=85+xeromammagrams+agreement&source=bl&ots=Sx_ZEhxs4j&sig=ACfU3U2anEuufva5kbwr0IHX6PlLjf0EGw&hl=en&sa=X&ved=2ahUKEwjqobCuiJzkAhVBGzQIHaX4CqoQ6AEwE3oECAgQAQ#v=onepage&q=85%20xeromammagrams%20agreement&f=false
@@ -105,18 +105,18 @@ radiologist <- tibble::tribble(
   )
 
 
-radiologist <- radiologist %>% 
-  mutate_at(.vars = vars(radiologist_a, radiologist_b), 
-            .funs = list(~ factor(., 
+radiologist <- radiologist %>%
+  mutate_at(.vars = vars(radiologist_a, radiologist_b),
+            .funs = list(~ factor(.,
                                   levels = c("Normal", "benign", "suspect", "cancer"))))
 
 # radiologist
-# 
-# save(radiologist, 
+#
+# save(radiologist,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/radiologist.rda")
 
 
-#### Example 2 -- fictional data -------------------------------- 
+#### Example 2 -- fictional data --------------------------------
 
 two_raters <- tibble::tribble(
   ~rater_a, ~rater_b,
@@ -244,18 +244,18 @@ two_raters <- tibble::tribble(
   1,        2,
   1,        2,
   1,        2,
-  1,        2) %>% 
-  mutate_all(.tbl = ., 
+  1,        2) %>%
+  mutate_all(.tbl = .,
              .funs = list(~ as.factor(.)))
 
 
 # two_raters
-# 
+#
 # save(two_raters,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/two_raters.rda")
 
 
-#### Multi rater exmple -------------------------------- 
+#### Multi rater exmple --------------------------------
 
 # 5 raters classify 10 subjects into 1 of 3 rating categories
 
@@ -271,17 +271,17 @@ rvary2 <- tibble::tribble(
          8,       2,       2,       2,       2,       3,
          9,       1,       3,      NA,      NA,       3,
         10,       1,       1,       1,       3,       3
-  ) %>% 
-  mutate_at(.vars = vars(rater1:rater5), 
+  ) %>%
+  mutate_at(.vars = vars(rater1:rater5),
             .funs = list(~ factor(., levels = c(1, 2, 3))))
 
 # rvary2
-# 
+#
 # save(rvary2,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/rvary2.rda")
 
 
-#### neurologists -------------------------------- 
+#### neurologists --------------------------------
 
 # Diagnostic Classification of Multiple Sclerosis Patients by Two Neurologists.
 # From Landis and Koch (1977)
@@ -292,8 +292,8 @@ rvary2 <- tibble::tribble(
 #                         3, 11, 4, 0,
 #                         2, 13, 3, 4,
 #                         1, 2, 4, 14), ncol = 4, byrow = TRUE)
-# 
-# dimnames(neuro_table) <- list(new_orleans = c("1", "2", "3", "4"), 
+#
+# dimnames(neuro_table) <- list(new_orleans = c("1", "2", "3", "4"),
 #                               winnipeg = c("1", "2", "3", "4"))
 
 neurologists <- tibble::tribble(
@@ -369,31 +369,31 @@ neurologists <- tibble::tribble(
                              4,         4)
 
 # neurologists
-# 
+#
 # save(neurologists,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/neurologists.rda")
 
 
-#### Table 1 of Fleiss (1971) -------------------------------- 
+#### Table 1 of Fleiss (1971) --------------------------------
 
 # Distribution of 6 Raters by Subject and Category: six raters classified 4
 # patients into 5 diagnostic categories
 
 
-# psych_dx_table <- matrix(c(0, 0, 0, 6, 0, 
-#                            0, 1, 4, 0, 1, 
-#                            2, 0, 4, 0, 0, 
+# psych_dx_table <- matrix(c(0, 0, 0, 6, 0,
+#                            0, 1, 4, 0, 1,
+#                            2, 0, 4, 0, 0,
 #                            0, 3, 3, 0, 0), ncol = 5, byrow = TRUE)
-# 
-# dimnames(psych_dx_table) <- list(subject = c("A", "B", "C", "D"), 
-#                                  category = c("Depression", 
-#                                               "Personality disorder", 
-#                                               "Schizophrenia", 
-#                                               "Neurosis", 
+#
+# dimnames(psych_dx_table) <- list(subject = c("A", "B", "C", "D"),
+#                                  category = c("Depression",
+#                                               "Personality disorder",
+#                                               "Schizophrenia",
+#                                               "Neurosis",
 #                                               "Other"))
-# 
+#
 # psych_dx_table
-# 
+#
 # lamisc::counts_to_cases(psych_dx_table)
 
 
@@ -430,9 +430,9 @@ diagnosis <- tibble::tribble(
   28, "Personality Disorder", "Personality Disorder",             "Neurosis",             "Neurosis",             "Neurosis",             "Neurosis",
   29,           "Depression",        "Schizophrenia",        "Schizophrenia",        "Schizophrenia",        "Schizophrenia",        "Schizophrenia",
   30,                "Other",                "Other",                "Other",                "Other",                "Other",                "Other"
-) %>% 
-  mutate_at(.vars = vars(dplyr::starts_with("rater")), 
-            .funs = list(~ factor(., 
+) %>%
+  mutate_at(.vars = vars(dplyr::starts_with("rater")),
+            .funs = list(~ factor(.,
                                   levels = c("Depression",
                                              "Personality Disorder",
                                              "Schizophrenia",
@@ -443,17 +443,17 @@ diagnosis <- tibble::tribble(
 
 diagnosis
 
-calc_ac_ratings(data = dx_table, 
+calc_ac_ratings(data = dx_table,
                 dplyr::starts_with("rater"))
 
 
 # diagnosis
-# 
+#
 # save(diagnosis,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/diagnosis.rda")
 
 
-#### Table 2 of Finn (1970) -------------------------------- 
+#### Table 2 of Finn (1970) --------------------------------
 
 # 5 raters classified 4 subjects into 3 categories labeled as {1, 2, 3}
 
@@ -463,21 +463,21 @@ finn_1970 <- tibble::tribble(
        "B",        2,         2,          2,         2,        2,
        "C",        2,         2,          2,         2,        1,
        "D",        1,         2,          2,         2,        2
-  ) %>% 
-  mutate_at(.vars = vars(dplyr::starts_with("rater")), 
-            .funs = list(~ factor(., 
+  ) %>%
+  mutate_at(.vars = vars(dplyr::starts_with("rater")),
+            .funs = list(~ factor(.,
                                   levels = c(1, 2, 3))))
 
 
 # finn_1970
-# 
+#
 # save(finn_1970,
 #      file = "/Users/latour/Dropbox/repos/lagree/data/finn_1970.rda")
 
 
 
 
-#### From irr package -------------------------------- 
+#### From irr package --------------------------------
 
 # library(irr)
 # data(anxiety)
@@ -485,3 +485,12 @@ finn_1970 <- tibble::tribble(
 # data("video")
 # data("vision")
 # video
+
+
+# usethis::use_data(diagnosis,
+#                   finn_1970,
+#                   neurologists,
+#                   radiologist,
+#                   rvary2,
+#                   two_raters)
+
