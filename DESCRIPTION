@@ -17,20 +17,19 @@ Depends:
     R (>= 3.2.0)
 ByteCompile: true
 Imports: 
-  broom, 
   dplyr, 
   glue, 
-  janitor, 
-  knitr, 
   magrittr, 
   purrr, 
   rlang, 
-  scales, 
   stringr, 
   tibble, 
   tidyr
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.3.2
 Suggests: 
-    rmarkdown
+  janitor, 
+  knitr, 
+  rmarkdown, 
+  tidyverse
 VignetteBuilder: knitr

@@ -4,12 +4,14 @@
 \name{two_raters}
 \alias{two_raters}
 \title{Generic ratings by two raters}
-\format{A tibble with 125 observations (1, 2) on 2 variables representing
+\format{
+A tibble with 125 observations (1, 2) on 2 variables representing
 different raters.
 \describe{
 \item{rater_a}{ratings of rater a (1, 2)}
 \item{rater_a}{ratings of rater b (1, 2)}
-}}
+}
+}
 \source{
 I forget where or why I found this one.
 }

@@ -4,7 +4,8 @@
 \name{diagnosis}
 \alias{diagnosis}
 \title{Fleiss (1971): Diagnoses on 30 subjects by 6 raters per subject}
-\format{A tibble with 30 observations (psychiatric diagnoses with levels
+\format{
+A tibble with 30 observations (psychiatric diagnoses with levels
 Depression, Personality Disorder, Schizophrenia, Neurosis, Other) on 6
 variables representing different raters and one variable for subject ID.
 \describe{
@@ -15,7 +16,8 @@ variables representing different raters and one variable for subject ID.
 \item{rater4}{a factor including the diagnoses of rater 4 (levels see above)}
 \item{rater5}{a factor including the diagnoses of rater 5 (levels see above)}
 \item{rater6}{a factor including the diagnoses of rater 6 (levels see above)}
-}}
+}
+}
 \source{
 Fleiss, J.L. (1971). Measuring nominal scale agreement among many raters. Psychological Bulletin, 76, 378-382.
 }

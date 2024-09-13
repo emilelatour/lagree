@@ -1,0 +1,108 @@
+
+TODO
+
+2. add functions from lamisc
+- interpret kappa
+- calc_pw_agree
+- k_alpha
+- interpret kappa
+3. Add McHugh to interpret kappa
+4. Make global function similar to kappa etc
+
+https://www.datanovia.com/en/lessons/cohens-kappa-in-r-for-two-categorical-variables/
+
+
+
+Your code looks quite comprehensive, covering different cases for the number of raters (2 or more). However, there are some areas where it can be improved for clarity, efficiency, and maintainability:
+
+1. **Documentation**: Add comments or documentation strings to explain the purpose of each function, input parameters, and intermediate steps. This will make it easier for others (and your future self) to understand the code.
+
+2. **Consistent Naming**: Ensure consistent naming conventions throughout the code. For example, stick to either snake_case or camelCase for variable and function names.
+
+3. **Error Handling**: Implement error handling for unexpected cases or invalid input parameters. This can prevent runtime errors and improve the robustness of your function.
+
+4. **Code Organization**: Consider breaking down the function into smaller, modular functions that perform specific tasks. This will improve readability and make it easier to debug and maintain the code.
+
+5. **Avoiding Redundancy**: Look for opportunities to eliminate redundant code. For example, you have similar checks for the dimensions of `weights_mat` in both cases for 2 or more raters. You can extract this logic into a separate function to avoid repetition.
+
+6. **Input Validation**: Validate input parameters to ensure they meet expected criteria. For instance, ensure that `weights` is a valid weight type and that `conf_lev` is within a valid range.
+
+7. **Consistent Return Type**: Ensure that the function returns consistent data types or structures, even if the results may vary based on the number of raters.
+
+8. **Unit Testing**: Write unit tests to verify the correctness of your function, especially for different scenarios and edge cases.
+
+9. **Performance Optimization**: Identify any performance bottlenecks and consider optimization techniques, such as using efficient algorithms or data structures.
+
+10. **Package Dependencies**: Minimize dependencies on external packages if possible, or at least ensure that they are clearly documented and necessary for the function's functionality.
+
+By addressing these areas, you can enhance the readability, maintainability, and robustness of your code. Additionally, consider seeking feedback from peers or code review to identify further improvements.
+
+
+
+library(irrCAC)
+
+#### Contingency table --------------------------------
+
+cont3x3abstractors
+#         Ectopic AIU NIU
+# Ectopic      13   0   0
+# AIU           0  20   7
+# NIU           0   4  56
+
+
+#### Distribution of raters by subject & category --------------------------------
+
+# Each row represents a subject (i.e. a psychiatric patient) and the number of
+# raters (i.e. psychiatrists) who classified it into each category used in the
+# inter-rater reliability study.
+
+distrib.6raters
+#    Depression Personality.Disorder Schizophrenia Neurosis Other
+# 1           0                    0             0        6     0
+# 2           0                    3             0        0     3
+# 3           0                    1             4        0     1
+# 4           0                    0             0        0     6
+# 5           0                    3             0        3     0
+# 6           2                    0             4        0     0
+# 7           0                    0             4        0     2
+# 8           2                    0             3        1     0
+# 9           2                    0             0        4     0
+# 10          0                    0             0        0     6
+# 11          1                    0             0        5     0
+# 12          1                    1             0        4     0
+# 13          0                    3             3        0     0
+# 14          1                    0             0        5     0
+# 15          0                    2             0        3     1
+
+
+#### Raw ratings --------------------------------
+
+# As you can see, a dataset of raw ratings is merely a listing of ratings that
+# the raters assigned to the subjects. Each row is associated with a single
+# subject.Typically, the same subject would be rated by all or some of the
+# raters.
+
+cac.raw4raters
+#    Rater1 Rater2 Rater3 Rater4
+# 1       1      1     NA      1
+# 2       2      2      3      2
+# 3       3      3      3      3
+# 4       3      3      3      3
+# 5       2      2      2      2
+# 6       1      2      3      4
+# 7       4      4      4      4
+# 8       1      1      2      1
+# 9       2      2      2      2
+# 10     NA      5      5      5
+# 11     NA     NA      1      1
+# 12     NA     NA      3     NA
+
+
+
+
+
+
+#### Outline --------------------------------
+
+# One AC (agreement coefficient) per file. Kappa for example. Then do 2 and 3
+# raters. Dist, Table, and other one for each.

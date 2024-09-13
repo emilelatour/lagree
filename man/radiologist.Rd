@@ -4,12 +4,14 @@
 \name{radiologist}
 \alias{radiologist}
 \title{Classification by two radiologists of 85 xeromammograms as normal, benign disease, suspicion of cancer, or cancer}
-\format{A tibble with 85 observations (Normal, Benign, Suspect, Cancer) on 2 variables representing
+\format{
+A tibble with 85 observations (Normal, Benign, Suspect, Cancer) on 2 variables representing
 different raters.
 \describe{
 \item{radiologist_a}{ratings of Radiologist a (see levels above)}
 \item{radiologist_b}{ratings of Radiologist b (see levels above)}
-}}
+}
+}
 \source{
 Boyd, N. F., C. Wolfson, M. Moskowitz, T. Carlile, M. Petitclerc, H. A.
 Ferri, E. Fishell, A. Gregoire, M. Kiernan, J. D. Longley, I. S. Simor, and

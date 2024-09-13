@@ -4,7 +4,8 @@
 \name{rvary2}
 \alias{rvary2}
 \title{rvary2 from Stata - simple tables for categorival variables}
-\format{A tibble with 10 observations (1, 2, 3) on 5 variables representing
+\format{
+A tibble with 10 observations (1, 2, 3) on 5 variables representing
 different raters and one variable for subject ID.
 \describe{
 \item{subject}{Subject ID}
@@ -13,7 +14,8 @@ different raters and one variable for subject ID.
 \item{rater3}{a factor including the diagnoses of rater 3 (levels see above)}
 \item{rater4}{a factor including the diagnoses of rater 4 (levels see above)}
 \item{rater5}{a factor including the diagnoses of rater 5 (levels see above)}
-}}
+}
+}
 \source{
 \href{https://www.stata-press.com/data/r13/r.html#r}{Datasets for Stata Base Reference Manual, Release 13}
 }
