@@ -55,21 +55,8 @@
 #' @rdname gwet_3_raw
 #'
 #' @examples
-#' library(tidyverse)
-#'
-#' rvary2 <- tibble::tribble(
-#'   ~subject, ~rater1, ~rater2, ~rater3, ~rater4, ~rater5,
-#'   1L,      1L,      2L,      2L,      NA,      2L,
-#'   2L,      1L,      1L,      3L,      3L,      3L,
-#'   3L,      3L,      3L,      3L,      3L,      3L,
-#'   4L,      1L,      1L,      1L,      1L,      3L,
-#'   5L,      1L,      1L,      1L,      3L,      3L,
-#'   6L,      1L,      2L,      2L,      2L,      2L,
-#'   7L,      1L,      1L,      1L,      1L,      1L,
-#'   8L,      2L,      2L,      2L,      2L,      3L,
-#'   9L,      1L,      3L,      NA,      NA,      3L,
-#'   10L,      1L,      1L,      1L,      3L,      3L
-#' )
+#' #  5 raters classify 10 subjects into 1 of 3 rating categories
+#' rvary2
 #'
 #' # More than two raters
 #' gwet_3_raw(data = rvary2,
@@ -80,98 +67,12 @@
 #'            rater1:rater2)
 #'
 #' # Another example with two raters
-#' rate2 <- tibble::tribble(
-#'   ~rada,     ~radb, ~pop, ~group,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "benign",  "Normal",   4L,     5L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign", "suspect",   1L,     7L,
-#'   "suspect",  "Normal",   3L,     9L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect",  "cancer",   2L,    12L,
-#'   "cancer",  "cancer",   1L,    16L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "Normal",  21L,     1L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "Normal",  "benign",  12L,     2L,
-#'   "benign",  "Normal",   4L,     5L,
-#'   "benign",  "Normal",   4L,     5L,
-#'   "benign",  "Normal",   4L,     5L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "benign",  "benign",  17L,     6L,
-#'   "suspect",  "Normal",   3L,     9L,
-#'   "suspect",  "Normal",   3L,     9L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect",  "benign",   9L,    10L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect", "suspect",  15L,    11L,
-#'   "suspect",  "cancer",   2L,    12L
-#' )
+#' # two radiologists who classify 85 xeromammograms into one of four categories
+#' # (Altman p. 403)
+#' radiologist
 #'
-#'
-#' gwet_3_raw(data = rate2,
-#'            rada, radb)
+#' gwet_3_raw(data = radiologist,
+#'            radiologist_a, radiologist_b)
 gwet_3_raw <- function(data,
                        ...,
                        weights = "unweighted",
