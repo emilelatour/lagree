@@ -1,4 +1,4 @@
-#' Calculate Agreement Coefficients (AC)
+#' Calculate Agreement Coefficients (AC) from raw data set
 #'
 #' This function calculates agreement coefficients, including Gwet's AC, Fleiss'
 #' kappa, and others, based on the input dataset. It supports various weight

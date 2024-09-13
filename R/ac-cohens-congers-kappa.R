@@ -719,6 +719,8 @@ conger_3_dist <- function(distribution,
     upper_ci = NA
   )
 
+  warning("Cohen/Conger's Kappa coefficient cannot be calculated from a distribution.")
+
   return(res)
 
 }

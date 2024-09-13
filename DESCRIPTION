@@ -30,6 +30,7 @@ RoxygenNote: 7.3.2
 Suggests: 
   janitor, 
   knitr, 
+  irrCAC, 
   rmarkdown, 
   tidyverse
 VignetteBuilder: knitr

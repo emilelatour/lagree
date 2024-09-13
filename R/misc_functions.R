@@ -56,7 +56,7 @@ calc_p_val <- function(t, df, alternative = "two.sided") {
 
   if (alternative == "two.sided") {
 
-    2 * (1 - pt(t, df))
+    2 * (1 - pt(abs(t), df))
 
   } else if (alternative == "less") {
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/calc-ac_raw.R
 \name{calc_ac_raw}
 \alias{calc_ac_raw}
-\title{Calculate Agreement Coefficients (AC)}
+\title{Calculate Agreement Coefficients (AC) from raw data set}
 \usage{
 calc_ac_raw(
   data,
