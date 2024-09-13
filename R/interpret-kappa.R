@@ -23,7 +23,7 @@
 #'
 #' }
 #'
-#' @import dplyr
+#' @importFrom dplyr case_when
 #'
 #' @return A string
 #' @export
@@ -99,6 +99,3 @@ interpret_kappa <- function(kappa,
   }
 
 }
-
-
-
