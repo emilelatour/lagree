@@ -2,11 +2,7 @@
 TODO
 
 2. add functions from lamisc
-- interpret kappa
-- calc_pw_agree
-- k_alpha
-- interpret kappa
-3. Add McHugh to interpret kappa
+
 4. Make global function similar to kappa etc
 
 https://www.datanovia.com/en/lessons/cohens-kappa-in-r-for-two-categorical-variables/
